@@ -3,6 +3,7 @@ zuul:
   ignoredServices: '*'
   routes:
     auth-service: /uaa/**
+    account-service: /accounts/**
     api-gateway: /gateway/**
 
 server:
