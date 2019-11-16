@@ -19,7 +19,7 @@ spring:
       override-none: true
 
 # JPA
-spring.jpa.hibernate.ddl-auto: none
+#spring.jpa.hibernate.ddl-auto: none
 
 # Spring Boot 1.5 makes actuator secure by default
 management.security.enabled: false
@@ -49,14 +49,3 @@ management:
     export:
       prometheus:
         enabled: true
-
----
-spring:
-  profiles: mysql
-  datasource:
-    schema: classpath*:db/mysql/schema.sql
-    data: classpath*:db/mysql/data.sql
-    url: jdbc:mysql://localhost:3306/petclinic?useSSL=false
-    username: root
-    password: petclinic
-    initialization-mode: ALWAYS
