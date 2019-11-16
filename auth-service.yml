@@ -2,7 +2,7 @@ spring:
   profiles: default
   data:
     mongodb:
-      host: auth-mongodb
+      host: localhost
       username: user
       password: password
       database: koala
@@ -16,6 +16,13 @@ eureka:
 
 spring:
   profiles: docker
+  data:
+    mongodb:
+      host: auth-mongodb
+      username: user
+      password: password
+      database: koala
+      port: 27017
   zipkin:
     baseUrl: http://tracing-server:9411
 server:
