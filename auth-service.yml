@@ -5,6 +5,15 @@ eureka:
     # enable to register multiple app instances with a random server port
     instance-id: ${spring.application.name}:${random.uuid}
 
+spring:
+  data:
+    mongodb:
+      host: auth-mongodb
+      username: user
+      password: password
+      database: koala
+      port: 27017
+
 ---
 spring:
   profiles: docker
