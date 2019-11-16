@@ -20,8 +20,8 @@ security:
   oauth2:
     client:
       clientId: account-service
-      clientSecret: password
-      accessTokenUri: http://auth-service:8081/uaa/oauth/token
+      clientSecret: clientId
+      accessTokenUri: http://auth-service/uaa/oauth/token
       grant-type: client_credentials
       scope: server
       
