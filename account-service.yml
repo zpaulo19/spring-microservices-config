@@ -1,0 +1,46 @@
+spring:
+  profiles: default
+  data:
+    mongodb:
+      host: localhost
+      username: user
+      password: password
+      database: koala
+      port: 25001
+
+eureka:
+  instance:
+    # enable to register multiple app instances with a random server port
+    instance-id: ${spring.application.name}:${random.uuid}
+
+server:
+  port: 8082
+
+security:
+  oauth2:
+    client:
+      clientId: account-service
+      clientSecret: password
+      accessTokenUri: http://auth-service:8081/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server
+      
+---
+
+spring:
+  profiles: docker
+  data:
+    mongodb:
+      host: account-mongodb
+      username: user
+      password: password
+      database: koala
+      port: 27017
+  zipkin:
+    baseUrl: http://tracing-server:9411
+server:
+  port: 8082
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
