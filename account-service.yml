@@ -21,7 +21,7 @@ security:
     client:
       clientId: account-service
       clientSecret: clientId
-      accessTokenUri: http://auth-service/uaa/oauth/token
+      accessTokenUri: http://localhost:8081/uaa/oauth/token
       grant-type: client_credentials
       scope: server
       
@@ -38,9 +38,20 @@ spring:
       port: 27017
   zipkin:
     baseUrl: http://tracing-server:9411
+    
 server:
   port: 8082
+  
 eureka:
   client:
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/
+
+security:
+  oauth2:
+    client:
+      clientId: account-service
+      clientSecret: clientId
+      accessTokenUri: http://auth-service:8081/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server

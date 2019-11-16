@@ -21,7 +21,7 @@ spring:
 security:
   oauth2:
     resource:
-      user-info-uri: http://auth-service/uaa/user/current
+      user-info-uri: http://auth-service:8081/uaa/user/current
       
 # JPA
 #spring.jpa.hibernate.ddl-auto: none
