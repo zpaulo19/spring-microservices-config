@@ -1,11 +1,5 @@
 spring:
   profiles: default
-eureka:
-  instance:
-    # enable to register multiple app instances with a random server port
-    instance-id: ${spring.application.name}:${random.uuid}
-
-spring:
   data:
     mongodb:
       host: auth-mongodb
@@ -13,8 +7,13 @@ spring:
       password: password
       database: koala
       port: 25000
-
+eureka:
+  instance:
+    # enable to register multiple app instances with a random server port
+    instance-id: ${spring.application.name}:${random.uuid}
+    
 ---
+
 spring:
   profiles: docker
   zipkin:
